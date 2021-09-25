@@ -107,11 +107,12 @@ const Contact = () => {
               Use {email ? "phone" : "email"} instead
             </Link>
           </Grid>
-          <div class="d-grid gap-2">
-            <button type="button" className="btn btn-lg btn-outline-dark">
-              Submit
-            </button>
-          </div>
+          <button
+            type="button"
+            className="btn btn-lg btn-outline-dark btn-block"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>

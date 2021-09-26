@@ -17,9 +17,9 @@ jobs:
         with:
           node-version: 12.x
       - run: yarn install
-        working-directory: frontend
+        working-directory: ./frontend
       - run: yarn build --if-present
-        working-directory: frontend
+        working-directory: ./frontend
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete

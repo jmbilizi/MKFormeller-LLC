@@ -10,7 +10,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - name: checkout repo
+        uses: actions/checkout@v1
       - name: Install Dependencies
         run: npm install
       - name: Build 

@@ -12,12 +12,20 @@ jobs:
     strategy:
       matrix:
         node-version: [15.x]
-    working-directory: ~/client
+    working-directory: ./client
     steps:
       - uses: actions/checkout@v1
       - run: npm install
+        working-directory: ./client
       - run: npm run build
+        working-directory: ./client
       - run: npm test
+        working-directory: ./client
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --follow-symlinks --delete

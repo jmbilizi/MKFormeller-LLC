@@ -26,7 +26,8 @@ jobs:
       - name: upload build folder from the result of this first job
         uses: actions/upload-artifact@v2
         with:
-          path: build
+          name: build
+          path: client/build
 
   deploy:
     runs-on: ubuntu-latest
@@ -35,7 +36,7 @@ jobs:
       - name: Download build folder from result of job 1
         uses: actions/download-artifact@v2
         with:
-          path: build
+          name: build
 
       - uses: actions/checkout@master
       - uses: jakejarvis/s3-sync-action@master

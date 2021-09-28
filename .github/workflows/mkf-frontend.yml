@@ -30,12 +30,12 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Download build folder from result of job 1
         uses: actions/download-artifact@v2
         with:
-          name: build
+          path: build
 
       - uses: actions/checkout@master
       - uses: jakejarvis/s3-sync-action@master

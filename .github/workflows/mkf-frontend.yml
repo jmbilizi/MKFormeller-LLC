@@ -7,7 +7,7 @@ on:
 
 defaults:
   run:
-    working-directory: frontend
+    working-directory: client
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build
-          path: frontend/build
+          path: client/build
 
   deploy:
     needs: build

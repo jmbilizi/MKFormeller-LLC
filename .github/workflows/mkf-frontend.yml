@@ -30,8 +30,7 @@ jobs:
       #     path: client/build
 
   deploy:
-    # needs: build
-    needs: client/build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       # - name: Download build folder from result of job 1

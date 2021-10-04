@@ -26,6 +26,7 @@ jobs:
       - name: npm i, build and test
         run: |
           npm cache clean --force
+          rm -rf node_modules package-lock.json
           npm i
           npm run build --if-present
       - name: upload build folder from the result of this first job

@@ -12,7 +12,7 @@ function Home() {
           style={{ backgroundColor: "black", color: "white" }}
           className="font-weight-bold p-4"
         >
-          MKFormeller-LLC
+          MKFormeller LLC
         </h1>
         <br></br>
         <h1 className="display-4">

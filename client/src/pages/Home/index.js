@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./style.css";
 import { ModalLink } from "react-router-modal-gallery";
 

@@ -29,7 +29,10 @@ function Home() {
         </p>
         <br></br>
         <ModalLink
-          className="btn-default btn-primary btn-lg px-3"
+          className="bg-primary text-light px-5 py-3"
+          style={{
+            textDecoration: "none",
+          }}
           to="/contact"
         >
           Get In Touch

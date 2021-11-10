@@ -18,7 +18,6 @@ function Home() {
           Serving adults 18+ with varying abilities..
         </h1>
         <br></br>
-        <p>Developed by Silver, Ivan, and Janvier</p>
         <p className="lead">
           Promoting independence, self-advocacy, and communication by providing
           quality travel training, job coaching, social skills training, and{" "}

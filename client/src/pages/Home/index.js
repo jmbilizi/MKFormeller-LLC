@@ -22,7 +22,7 @@ function Home() {
           Promoting independence, self-advocacy, and communication by providing
           quality travel training, job coaching, social skills training, and{" "}
           <span>
-            <a href="/" class="link-primary">
+            <a href="/" className="link-primary">
               more...
             </a>
           </span>

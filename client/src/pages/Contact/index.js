@@ -6,7 +6,7 @@ import Title from "../../components/Title";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-const Contact = () => {
+const Contact = ({ showTitle = true }) => {
   const [email, setEmail] = React.useState(true);
   const handleEmail = () => setEmail(!email);
 
@@ -15,10 +15,11 @@ const Contact = () => {
     lastName: "",
     emailAddress: "",
     phone: "",
+    message: "",
     error: "",
   });
 
-  const { firstName, lastName, emailAddress, phone, error } = state;
+  const { firstName, lastName, emailAddress, phone, message, error } = state;
 
   const handleChange = (name) => (event) => {
     setState({ ...state, error: "", [name]: event.target.value });
@@ -41,7 +42,8 @@ const Contact = () => {
 
   return (
     <div>
-      <Title label="Get In Touch" />
+      {showTitle ? <Title label="Get In Touch" /> : null}
+
       <div
         className="alert alert-danger text-center"
         style={{ display: error ? "" : "none" }}
@@ -61,7 +63,6 @@ const Contact = () => {
               onChange={handleChange("firstName")}
               value={firstName}
               autoComplete="first name"
-              autoFocus
             />
           </Grid>
           <Grid item xs={12} className="py-0">
@@ -75,6 +76,20 @@ const Contact = () => {
               onChange={handleChange("lastName")}
               value={lastName}
               autoComplete="last name"
+            />
+          </Grid>
+          <Grid item xs={12} className="py-0">
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="message"
+              label="Message"
+              multiline
+              name="message"
+              onChange={handleChange("message")}
+              value={message}
+              autoComplete="message"
             />
           </Grid>
           <Grid item xs={12} className="py-0">
@@ -107,12 +122,14 @@ const Contact = () => {
               Use {email ? "phone" : "email"} instead
             </Link>
           </Grid>
-          <button
-            type="button"
-            className="btn btn-lg btn-outline-dark btn-block"
-          >
-            Submit
-          </button>
+          <div class="d-grid">
+            <button
+              type="button"
+              className="btn btn-lg btn-outline-dark btn-block"
+            >
+              Send
+            </button>
+          </div>
         </form>
       </div>
     </div>

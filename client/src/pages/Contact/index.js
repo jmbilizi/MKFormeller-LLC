@@ -38,18 +38,25 @@ const Contact = ({ showTitle = true }) => {
     },
   }));
 
+  const onSubmit = () => {
+    if (firstName) {
+      setState({
+        ...state,
+        error: `${firstName}, we are unable to submit your request at the moment, please call or email instead, 301-633-6834 | MKFormeller@gmail.com`,
+      });
+    } else {
+      setState({
+        ...state,
+        error: `We are unable to submit your request at the moment, please call or email instead, 301-633-6834 | MKFormeller@gmail.com`,
+      });
+    }
+  };
+
   const classes = useStyles();
 
   return (
     <div>
       {showTitle ? <Title label="Get In Touch" /> : null}
-
-      <div
-        className="alert alert-danger text-center"
-        style={{ display: error ? "" : "none" }}
-      >
-        {error}
-      </div>
       <div className={classes.paper}>
         <form className={classes.form} noValidate>
           <Grid item xs={12} className="py-0">
@@ -122,7 +129,13 @@ const Contact = ({ showTitle = true }) => {
               Use {email ? "phone" : "email"} instead
             </Link>
           </Grid>
-          <div class="d-grid">
+          <p
+            className="alert alert-danger text-center fs-6"
+            style={{ display: error ? "" : "none" }}
+          >
+            {error}
+          </p>
+          <div className="d-grid" onClick={onSubmit}>
             <button
               type="button"
               className="btn btn-lg btn-outline-dark btn-block"

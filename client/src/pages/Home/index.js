@@ -174,7 +174,7 @@ function Home() {
           </ModalLink> */}
         </section>
 
-        <section id="testimonials">
+        <section id="testimonials" className="mb-4">
           <div className="container jumbotron rounded border">
             <div className="row py-2">
               <h1>Testimonials</h1>
